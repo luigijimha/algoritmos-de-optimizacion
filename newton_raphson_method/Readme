@@ -1,0 +1,3 @@
+this directory contains newton raphson codes in c++ and python.
+python code uses sympy library which allows you to input the function you want to find its root
+c++ code requires you to manually input the function.
