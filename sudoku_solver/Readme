@@ -1,0 +1,9 @@
+this directory contains sudoku solver codes.
+
+
+One code is made in python and uses backtracking to build the resultant matrix
+
+the second code is made in c++ and uses pointers and and ordered structure
+the ordered structures works similarly to an ordered queue
+the second code is capable of finding a solution only if one solution exists
+if multiple solutions exists, it will stop when you reach the sudoku matrix from where multiple solutions bifurcate
