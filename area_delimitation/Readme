@@ -1,0 +1,2 @@
+this directory contains area delimitation code to find the envolvent convex of a group of points.
+the code uses an algorithm with a similar logic to jarvis march
