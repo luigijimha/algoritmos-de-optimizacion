@@ -1,7 +1,9 @@
-this directory contains sudoku solver codes.
+this directory contains sudoku solver codes and a 8 queens game solver code.
 
 
-One code is made in python and uses backtracking to build the resultant matrix
+the 8 queens game solver finds all possible solutions for this specific problem by using back tracking
+
+One sudoku solver code is made in python and uses backtracking to build the resultant matrix
 
 the second code is made in c++ and uses pointers and an ordered structure
 the ordered structure works similarly to an ordered queue

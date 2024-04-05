@@ -1,2 +1,3 @@
-This directory contains an example of the middle point theorem using voronoi diagrams.
-the outputted diagram wants to delimit the areas that each of the four fire stations should cover in Oaxaca de Juarez
+This directory contains examples of the middle point theorem using voronoi diagrams.
+One code finds displays a diagram that delimits the areas that each of the four fire stations should cover in Oaxaca de Juarez.
+The second code finds the best spots to position 3 antennas in Oaxaca de Juarez to maximize its coverage area given an array with location options.

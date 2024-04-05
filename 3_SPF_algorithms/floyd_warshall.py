@@ -11,11 +11,11 @@ def updatePath(matrix, path, pivot):
         for j in range(len(matrix)):
             if j == pivot: continue
             alt_path = matrix[i][pivot] + matrix[pivot][j]
+
             if alt_path < matrix[i][j]:
                 matrix[i][j] = alt_path
                 path[i][j] = pivot
-
-            matrix[i][j] = alt_path if alt_path < matrix[i][j] else matrix[i][j]
+    printPathMatrix(path)
     printCostMatrix(matrix)
     return matrix
 
@@ -133,5 +133,15 @@ N1 N2 N3 N4
 0 8, 2 2
 0 5, 3 1
 0 2
+
+"""
+
+"""
+A B C D E
+1 9, 3 5
+0 9, 2 5, 4 8
+1 5, 3 5, 4 7
+0 5, 2 5, 4 7
+1 8, 2 7, 3 7
 
 """

@@ -1,4 +1,5 @@
 import math
+import tkinter as tk
 
 class ConvexHull:
     # list that stores all points coordinates
@@ -6,6 +7,10 @@ class ConvexHull:
 
     def __init__(self, points):
         self.points = points
+        self.root = tk.Tk()
+        self.canvas = tk.Canvas(self.root)
+        self.canvas.pack()
+
 
     """
     transforms rectangular coordinates to polar coordinates
@@ -86,6 +91,7 @@ class ConvexHull:
             answer.append(it)
             it, theta = self.findNextPoint(it, theta)
 
+        answer.append(initialNode)
         return answer
     
     """
@@ -105,11 +111,32 @@ class ConvexHull:
 
         return index
 
+    """
+    plot envolvent convex with Tkinter
+    """
+    #! this function is still not complete yet
+    def graphPoints(self):
+        pointIndexes = self.run()
+
+        # plot envolvent convex
+        for i in range(len(pointIndexes) - 1):
+            A = self.points[pointIndexes[i]]*10
+            B = self.points[pointIndexes[i+1]]*10
+
+            # plot a line between A and B
+            self.canvas.create_line(A[0], A[1], B[0], B[1], fill="blue")
+
+        # plot points
+        for point in self.points:
+            self.canvas.create_oval(point[0]-30, point[1]-30, point[0]+30, point[1]+30, fill="red")
+
+        self.root.mainloop()
 
 
 
 # run code
 
+# read and store points data
 coords = input('insert points: ')
 coords = coords.split(', ')
 points = []
@@ -119,25 +146,50 @@ for coord in coords:
     y = int(y)
     points.append((x, y))
 
+# initialize object
 convex = ConvexHull(points)
-print('convex area nodes:', convex.run())
+
+# get convex indexes
+pointIndexes = convex.run()
+# print convex indexes
+print('convex area node indexes:', pointIndexes)
+
+# retreive and print point coordinates
+pointCoordinates = []
+for index in pointIndexes:
+    pointCoordinates.append(convex.points[index])
+print('convex area node coordinates:', pointCoordinates)
+
+#convex.graphPoints()
 
 
+""" ----------------------- sample inputs ----------------------- """
 
 # sample input
 """
 7 6, 8 4, 7 2, 3 2, 1 6, 1 8, 4 9
 """
-# output
+# output (convex point indexes, the index depends in the order points were inserted)
 """
-4 5 6 0 1 2 3
+4 5 6 0 1 2 3 4
 """
 
-#sample input
+
+# input
 """
 3 8, 1 6, 6 2, 7 6, 5 5, 8 4, 6 8
 """
 # output
 """
-1 0 6 3 5 2
+1 0 6 3 5 2 1
+"""
+
+
+# input
+"""
+1 2, 3 4, 5 6, 7 8
+"""
+# output
+"""
+0 1 2 3 2 1 0
 """
