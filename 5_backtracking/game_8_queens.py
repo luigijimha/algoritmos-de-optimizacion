@@ -1,5 +1,6 @@
 """
 performs backtracking to find all the possible solutions for eight queens game
+@param{Array} positions     array with played position
 """
 def solveQueenPositions(positions):
     # get current iteration row

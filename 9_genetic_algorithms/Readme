@@ -1,0 +1,5 @@
+This directory contains problems solved through genetic algorithms. The solved problems are:
+
+eigth queen game. find a way to place 8 queens in the board, where none of the queens is attacking each other.
+finding maximums for a lineal optimization problem, given the resources, resource production costs for product, product gain and product production constraints.
+ants eating competence. find the best route of n steps an ant can follow in a map to eat as much as food as possible.
