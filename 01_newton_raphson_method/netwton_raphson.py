@@ -1,4 +1,4 @@
-from sympy import symbols, sympify, sin, cos, tan
+from sympy import symbols, sympify
 
 """
 adds right padding to number for printing table

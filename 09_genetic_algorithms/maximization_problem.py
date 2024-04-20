@@ -37,7 +37,7 @@ def randomizeGen(start, end):
 
 """
 intializes an entity representing the production goals for a production
-@param {list} limits     list with the individual production limits
+@param {List} limits     list with the individual production limits
 @return                  list with randomly generated production goals
 """
 def initializeEntity():
@@ -53,7 +53,7 @@ def initializeEntity():
 
 """
 calculates efficiency of the entity to solve the problem
-@param {list} entity             produced crafts array
+@param {List} entity             produced crafts array
 @return                          gain for current entity to solve problem
 """
 def fitness(entity):

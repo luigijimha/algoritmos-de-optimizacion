@@ -103,6 +103,7 @@ class LifeGame:
             print()
         print('\n')
 
+# inputs
 """
 board = [
     1, 0, 1, 1, 0,

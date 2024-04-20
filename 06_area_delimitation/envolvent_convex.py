@@ -14,8 +14,8 @@ class ConvexHull:
 
     """
     transforms rectangular coordinates to polar coordinates
-    @param {Pair} A     rectangular coordinates
-    @return {Pair}      polar coordinates
+    @param {Tuple} A     rectangular coordinates
+    @return {Tuple}      polar coordinates
     """
     def transformToPolarCoordinates(self, A):
         x, y = A
@@ -26,9 +26,9 @@ class ConvexHull:
 
     """
     performs vectorial reduction operation
-    @param {Pair} A     initial point
-    @param {Pair} A     final point
-    @return {Pair}      resultant vector
+    @param {Tuple} A     initial point
+    @param {Tuple} A     final point
+    @return {Tuple}      resultant vector
     """
     def vectorialReduction(self, A, B):
         Ax, Ay = A
@@ -42,7 +42,7 @@ class ConvexHull:
     finds next border point
     @param {int} current      index to current point in self.points
     @param {double} theta     angle of current iteration
-    @return {Pair}             index of next border point in self.points and last angle of calculus
+    @return {Tuple}             index of next border point in self.points and last angle of calculus
     """
     def findNextPoint(self, current, theta):
         currentPoint = self.points[current]
@@ -76,7 +76,7 @@ class ConvexHull:
 
     """
     run program and find convex area
-    @return {list}     list with node connections indexes for convex area
+    @return {List}     list with node connections indexes for convex area
     """
     def run(self):
         # find initial node and set starting values
@@ -110,29 +110,6 @@ class ConvexHull:
                 index = i
 
         return index
-
-    """
-    plot envolvent convex with Tkinter
-    """
-    #! this function is still not complete yet
-    def graphPoints(self):
-        pointIndexes = self.run()
-
-        # plot envolvent convex
-        for i in range(len(pointIndexes) - 1):
-            A = self.points[pointIndexes[i]]*10
-            B = self.points[pointIndexes[i+1]]*10
-
-            # plot a line between A and B
-            self.canvas.create_line(A[0], A[1], B[0], B[1], fill="blue")
-
-        # plot points
-        for point in self.points:
-            self.canvas.create_oval(point[0]-30, point[1]-30, point[0]+30, point[1]+30, fill="red")
-
-        self.root.mainloop()
-
-
 
 # run code
 

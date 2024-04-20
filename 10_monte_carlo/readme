@@ -1,0 +1,5 @@
+this directory contains problems solved through monte carlo algoritm.
+
+the first code finds the value of PI from a circle and a square
+the second code finds the area and volume of a sphere using a cube as a helper
+the third code resolves the integral of a function. however the code doesn't work well within intervals who have both, positive and negative sides.
