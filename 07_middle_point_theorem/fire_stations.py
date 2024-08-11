@@ -5,7 +5,7 @@ import pandas as pd
 from scipy.spatial import Voronoi, voronoi_plot_2d
 
 placeName = 'Oaxaca de Juarez, Mexico'
-CSVFireStationFile = './7_middle_point_theorem/fire_stations_oaxaca.csv'
+CSVFireStationFile = './07_middle_point_theorem/fire_stations_oaxaca.csv'
 
 # read location points
 df = pd.read_csv(CSVFireStationFile)
